@@ -1,37 +1,79 @@
 # Module Project - Recursive Sorting
 
-In this two day project, you will be implementing many different solutions to the same problem: sort a list of integers in ascending order. You will also be using your newfound knowledge of complexity analysis to evaluate each implementation for efficiency.
+## Algorithms
 
-# No Googling for Code
+## Recursive Sorting
 
-For the sorting module, it's OK to Google for things like this:
+## Objectives
 
-* Pseudocode
-* Descriptions of algorithms
-* Videos that show how the algorithm works
+- identify when a problem is amenable to a recursive solution and use recursion to solve it
+- trace and accurately identify the output of a recursive function call
+- write a recursive solution to a problem
+- distinguish when to use, classify the performance, and implement code to conduct classic recursive sorting algorithms
 
-But you should **NOT** search for:
+## Introduction
 
-* Code
+During today's project, you will get a chance to practice the module's objectives. You will be required to write a recursive merge sort algorithm. Knowing when to and how to use recursion will make you a better programmer and developer. It will give you one more tool in your toolbag whenever you face a problem that you need to solve.
 
-If you see code, avert your eyes and hit the back button!
+When you begin interviewing for jobs, you will often encounter problems that have elegant recursive solutions. Being comfortable with recursion and understanding how recursion works at a deep level is essential in ensuring you are ready to impress hiring managers and (ultimately) can contribute to an engineering team in a significant way.
 
-This isn't for anti-cheating purposes. This is because _if you copy code, you won't learn the most important part of this lesson!_ One of the things we want to practice here is to take a spec and turn it into code. You'll be expected to do this incessantly at work, and we want to practice it here. Yes, it's harder this way, but you don't get better by practicing easy stuff.
+## Instructions and/or completion requirements
 
-Your task is to take a simple problem (sort an list of ints) and a pre-defined plan (we give you an algorithm description) and turn that into code. These steps should sound familiar, as they are 1-3 of [the Lambda Problem Solving Framework](https://github.com/LambdaSchool/CS-Wiki/wiki/Lambda-Problem-Solving-Framework). Soon, you will be coming up with your own plans for more complex problems so don't cheat yourself out of valuable coding practice.
+1. Open up the [recursive_sorting](src/recursive_sorting) directory
+2. Read through the descriptions of the `merge_sort` algorithm
+3. Implement `merge_sort` in [recursive_sorting.py](src/recursive_sorting/recursive_sorting.py)
+4. Test your implementation by running `test_recursive.py`
 
-That being said, please still use the 20 minute rule :slightly_smiling_face:
+## Resources [TODO]
 
+This section includes links to any required or supplemental materials. These may consist of documents an instructor or curriculum developer explicitly created for the course, or external references and examples and that relate to/inform/shed light on the module challenge.
 
-## MVP Tasks
+[Assignment help](example)
 
- - Open up the [recursive_sorting](src/recursive_sorting) directory
- - Read through the descriptions of the `merge_sort` algorithm
- - Implement `merge_sort` in [recursive_sorting.py](src/recursive_sorting/recursive_sorting.py)
- - Test your implementation by running `test_recursive.py`
+[Examples in a real-world context](example)
 
-## Stretch Goals
- - Implement all the methods in the `searching.py` file in the `searching` directory.
- - Implement the `count_sort` algorithm in the `iterative_sorting` directory.
- - Implement an in-place version of `merge_sort` that does not allocate any additional memory. In other words, the space complexity for this function should be O(1).
- - Implement the `timsort` algorithm, which is a real-world sorting algorithm. In fact, it is the sorting algorithm that is used when you run Python's built-in `sort` method. 
+[Documentation of gotchas](example)
+
+[FAQ](example)
+
+## Stretch goals
+
+- [ ] Implement all the methods in the `searching.py` file in the `searching` directory.
+- [ ] Implement the `count_sort` algorithm in the `iterative_sorting` directory.
+- [ ] Implement an in-place version of `merge_sort` that does not allocate any additional memory. In other words, the space complexity for this function should be O(1).
+- [ ] Implement the `timsort` algorithm, which is a real-world sorting algorithm. It is the sorting algorithm that is used when you run Python's built-in `sort` method. 
+
+## Tests [TODO]
+
+Not every module (or every course) will require this section.
+
+However, courses and modules with significant programming components may find it useful to include information/instruction regarding any code tests that the students may or may not be required to run to verify they've produced a passing solution.
+
+If you include tests, describe how to run them, and any setup required. Be as detailed as possible – testing is an area many of our students struggle with.
+
+> Test 1
+
+- Instructions
+
+## FAQs [TODO]
+
+**What should I include in this section?**
+
+*Include the answers to frequently asked questions as they come up. If it's a new module challenge, try to answer a few of the questions you think students might ask. Think ahead to potential roadblocks for an amateur.*
+
+## Submission format [TODO]
+
+Describe how the student should deliver the completed challenge. If it's step-by-step,
+
+1. include
+2. a
+3. numbered
+4. list.
+
+## Grading rubric [TODO]
+
+If you've prepared a grading rubric to evaluate the quality of a student's work on your module challenge assignment, include any instructions or relevant links below.
+
+[Click here to see a grading rubric example](https://docs.google.com/spreadsheets/d/1uvNeQZtIXFXUGSPBtBdA3C7Pen8ayjLPcaHahcEiVkI/edit#gid=0)
+
+[Module challenge grading rubric](https://www.notion.so/0ea69725e5664354a4338553a175e757)
