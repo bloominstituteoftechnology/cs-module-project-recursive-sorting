@@ -1,4 +1,4 @@
-# Sorting FAQ
+# FAQ
 
 ## Contents
 
