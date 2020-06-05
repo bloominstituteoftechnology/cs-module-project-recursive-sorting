@@ -1,40 +1,88 @@
-# TO-DO: complete the helper function below to merge 2 sorted arrays
-def merge(arrA, arrB):
-    elements = len(arrA) + len(arrB)
+"""
+Recursive sorting assignment file.
+"""
+
+
+def merge(arr_a, arr_b):
+    """
+    A helper function to merge two arrays.
+    """
+    elements = len(arr_a) + len(arr_b)
     merged_arr = [0] * elements
 
-    # Your code here
-
+    j, k = 0, 0
+    for i in range(len(merged_arr)):
+        if k > len(arr_b) - 1:
+            merged_arr[i] = arr_a[j]
+            j += 1
+        elif j > len(arr_a) - 1:
+            merged_arr[i] = arr_b[k]
+            k += 1
+        elif arr_a[j] < arr_b[k]:
+            merged_arr[i] = arr_a[j]
+            j += 1
+        elif arr_b[k] < arr_a[j]:
+            merged_arr[i] = arr_b[k]
+            k += 1
 
     return merged_arr
 
 
-# TO-DO: implement the Merge Sort function below USING RECURSION
 def merge_sort(arr):
-    # Your code here
+    """
+    Recursive implementation of merge sort.
+    """
+
+    if len(arr) <= 1:
+        return arr
+
+    arr_a = arr[:len(arr) // 2]
+    arr_b = arr[len(arr) // 2:]
+    return merge(merge_sort(arr_a), merge_sort(arr_b))
 
 
-    return arr
-
-
-# implement an in-place merge sort algorithm
 def merge_in_place(arr, start, mid, end):
-    # Your code here
+    """
+    An in-place merge helper function.
 
+    The first element of the second sorted section is indicated by 'mid'.
+    """
+
+    while start < mid and mid < end + 1:
+
+        if arr[start] < arr[mid]:
+            start += 1
+        else:
+            for i in range(start, mid):
+                arr[i], arr[mid] = arr[mid], arr[i]
+            start += 1
+            mid += 1
 
     return arr
 
 
-def merge_sort_in_place(arr, l, r):
-    # Your code here
+def merge_sort_in_place(arr, left, right):
+    """
+    An in-place merge sort implementation.
+    """
 
+    if right - left <= 0:
+        return arr
+
+    mid = left + ((right - left) // 2)
+    merge_sort_in_place(arr, left, mid)
+    merge_sort_in_place(arr, mid + 1, right)
+    merge_in_place(arr, left, mid + 1, right)
 
     return arr
 
 
-# STRETCH: implement the Timsort function below
-# hint: check out https://github.com/python/cpython/blob/master/Objects/listsort.txt
 def timsort(arr):
+    """
+    STRETCH: implement the Timsort function below
+    hint: check out https://github.com/python/cpython/blob/master/Objects/
+    listsort.txt
+    """
     # Your code here
 
     return arr
