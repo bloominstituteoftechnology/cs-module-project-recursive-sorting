@@ -47,11 +47,12 @@ def merge_sort(arr):
 def merge_in_place(arr, start, mid, end):
     # begin with the first element in the right
     # half of the list
-
+    half = mid + 1
 
     # if the two halves we are merging are already sorted
     # we do not have to do anything
-
+    if arr[mid] <= arr[half]:
+        return
     # Two pointers to maintain start
     # of both arrays to merge
 
