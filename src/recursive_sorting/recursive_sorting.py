@@ -30,7 +30,8 @@ def merge(arrA, arrB):
 
 # TO-DO: implement the Merge Sort function below USING RECURSION
 def merge_sort(arr):
-    # Your code here
+    # Our base case is when the lists length is 1
+    # // is Floor division - division that results into whole number adjusted to the left in the number line
 
 
     return arr
