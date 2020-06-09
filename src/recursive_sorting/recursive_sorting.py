@@ -3,7 +3,9 @@ def merge(arrA, arrB):
     elements = len(arrA) + len(arrB)
     merged_arr = [0] * elements
 
-    # Your code here
+    # init the two pointers that start at each list
+    a = 0
+    b = 0
 
 
     return merged_arr
