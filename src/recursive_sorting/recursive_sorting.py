@@ -21,7 +21,7 @@ def merge(arrA, arrB):
         combined.append(arrA[a])
         a += 1
 
-     while b < len(arrB):
+    while b < len(arrB):
         combined.append(arrB[b])
         b += 1
 
