@@ -32,7 +32,8 @@ def merge(arrA, arrB):
 def merge_sort(arr):
     # Our base case is when the lists length is 1
     # // is Floor division - division that results into whole number adjusted to the left in the number line
-
+    if len(arr) > 1:
+        # Return everything up to the length of the array divided by 2, round down to whole number to the left
 
     return arr
 
