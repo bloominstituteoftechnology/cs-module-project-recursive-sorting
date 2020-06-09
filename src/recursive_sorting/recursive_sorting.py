@@ -10,19 +10,19 @@ def merge(arrA, arrB):
     while a < len(arrA) and b < len(arrB):
         # compare the elements that a and b point at
         if arrA[a] < arrB[b]:
-            combined.append(arrA[a])
+            merged_arr.append(arrA[a])
             a += 1
         else:
-            combined.append(arrB[b])
+            merged_arr.append(arrB[b])
             b += 1
     # at this point, we've finished traversing one of the lists completely
     # we need to add all of the elements from the other list to the combined list
     while a < len(arrA):
-        combined.append(arrA[a])
+        merged_arr.append(arrA[a])
         a += 1
 
     while b < len(arrB):
-        combined.append(arrB[b])
+        merged_arr.append(arrB[b])
         b += 1
 
     return merged_arr
@@ -45,7 +45,22 @@ def merge_sort(arr):
 
 # implement an in-place merge sort algorithm
 def merge_in_place(arr, start, mid, end):
-    # Your code here
+    # begin with the first element in the right
+    # half of the list
+
+
+    # if the two halves we are merging are already sorted
+    # we do not have to do anything
+
+    # Two pointers to maintain start
+    # of both arrays to merge
+
+            # now shift all the element between element 1
+            # element 2, right by 1
+
+
+
+            # Update all the pointers
 
 
     return arr
