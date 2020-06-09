@@ -15,6 +15,16 @@ def merge(arrA, arrB):
         else:
             combined.append(arrB[b])
             b += 1
+    # at this point, we've finished traversing one of the lists completely
+    # we need to add all of the elements from the other list to the combined list
+    while a < len(arrA):
+        combined.append(arrA[a])
+        a += 1
+
+     while b < len(arrB):
+        combined.append(arrB[b])
+        b += 1
+
     return merged_arr
 
 
