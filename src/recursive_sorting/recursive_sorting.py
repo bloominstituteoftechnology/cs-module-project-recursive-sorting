@@ -1,7 +1,7 @@
 # TO-DO: complete the helper function below to merge 2 sorted arrays
 def merge(arrA, arrB):
     elements = len(arrA) + len(arrB)
-    merged_arr = [0] * elements
+    merged_arr = []
 
     # init the two pointers that start at each list
     a = 0
