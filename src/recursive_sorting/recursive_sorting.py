@@ -34,6 +34,10 @@ def merge_sort(arr):
     # // is Floor division - division that results into whole number adjusted to the left in the number line
     if len(arr) > 1:
         # Return everything up to the length of the array divided by 2, round down to whole number to the left
+        left = merge_sort(arr[:len(arr) // 2])
+        # Return everything up to the length of the array divided by 2, round down to whole number to the right
+        right = merge_sort(arr[len(arr) // 2:])
+
 
     return arr
 
