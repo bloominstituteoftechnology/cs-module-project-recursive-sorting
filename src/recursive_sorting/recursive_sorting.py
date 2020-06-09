@@ -63,12 +63,9 @@ def merge_in_place(arr, start, mid, end):
             index = half
             # now shift all the element between element 1
             # element 2, right by 1
-
-
-
-            # Update all the pointers
-
-
+            while index != start:
+                arr[index] = arr[index - 1]
+                index -= 1
     return arr
 
 
