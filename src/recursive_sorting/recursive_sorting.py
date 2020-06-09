@@ -66,6 +66,11 @@ def merge_in_place(arr, start, mid, end):
             while index != start:
                 arr[index] = arr[index - 1]
                 index -= 1
+            arr[start] = value
+            # Update all the pointers
+            start += 1
+            mid += 1
+            half += 1
     return arr
 
 
