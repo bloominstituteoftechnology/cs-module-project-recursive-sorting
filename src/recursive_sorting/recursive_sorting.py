@@ -7,7 +7,14 @@ def merge(arrA, arrB):
     a = 0
     b = 0
 
-
+    while a < len(arrA) and b < len(arrB):
+        # compare the elements that a and b point at
+        if arrA[a] < arrB[b]:
+            combined.append(arrA[a])
+            a += 1
+        else:
+            combined.append(arrB[b])
+            b += 1
     return merged_arr
 
 
