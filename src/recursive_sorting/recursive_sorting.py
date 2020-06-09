@@ -55,7 +55,12 @@ def merge_in_place(arr, start, mid, end):
         return
     # Two pointers to maintain start
     # of both arrays to merge
-
+    while start <= mid and half <= end:
+        if arr[start] <= arr[half]:
+            start += 1
+        else:
+            value = arr[half]
+            index = half
             # now shift all the element between element 1
             # element 2, right by 1
 
