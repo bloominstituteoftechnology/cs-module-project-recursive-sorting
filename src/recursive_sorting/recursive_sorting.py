@@ -37,7 +37,8 @@ def merge_sort(arr):
         left = merge_sort(arr[:len(arr) // 2])
         # Return everything up to the length of the array divided by 2, round down to whole number to the right
         right = merge_sort(arr[len(arr) // 2:])
-
+        # run the left and right through the above "merge" function
+        arr = merge(left, right)
 
     return arr
 
