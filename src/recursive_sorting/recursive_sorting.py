@@ -2,34 +2,26 @@
 def merge(arrA, arrB):
     elements = len(arrA) + len(arrB)
     merged_arr = []
-
     # init the two pointers that start at each list
-    a = 0
-    b = 0
-
-    while a < elements:
+    while 0 < elements:
         # compare the elements that a and b point at
-        if arrA[a] < arrB[b]:
-            merged_arr.append(arrA[a])
-            a += 1
+        if arrA[0] < arrB[0]:
+            merged_arr.append(arrB.pop(0))
         else:
-            merged_arr.append(arrB[b])
-            b += 1
+            merged_arr.append(arrA.pop(0))
     # at this point, we've finished traversing one of the lists completely
     # we need to add all of the elements from the other list to the combined list
-    while a < len(arrA):
-        merged_arr.append(arrA[a])
-        a += 1
-
-    while b < len(arrB):
-        merged_arr.append(arrB[b])
-        b += 1
-
+    while 0 < len(arrA):
+        merged_arr.append(arrA.pop(0))
+    while 0 < len(arrB):
+        merged_arr.append(arrB.pop(0))
     return merged_arr
 
 
 # TO-DO: implement the Merge Sort function below USING RECURSION
 def merge_sort(arr):
+    if len(arr) <= 1:
+        return arr
     # Our base case is when each lists length is 1
     # // is Floor division - division that results into whole number adjusted to the left in the number line
     mid = len(arr) // 2
