@@ -32,11 +32,12 @@ def merge(arrA, arrB):
 def merge_sort(arr):
     # Our base case is when each lists length is 1
     # // is Floor division - division that results into whole number adjusted to the left in the number line
+    mid = len(arr) // 2
     if len(arr) > 1:
         # Return everything up to the length of the array divided by 2, round down to whole number to the left
-        left = merge_sort(arr[:len(arr) // 2])
+        left = merge_sort(arr[:mid])
         # Return everything up to the length of the array divided by 2, round down to whole number to the right
-        right = merge_sort(arr[len(arr) // 2:])
+        right = merge_sort(arr[mid:])
         # run the left and right through the above "merge" function
         arr = merge(left, right)
     return arr
