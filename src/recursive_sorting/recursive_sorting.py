@@ -3,7 +3,7 @@ def merge(arrA, arrB):
     elements = len(arrA) + len(arrB)
     merged_arr = []
     # init the two pointers that start at each list
-    while 0 < elements:
+    while len(arrA) > 0 and len(arrB) > 0:
         # compare the elements that a and b point at
         if arrA[0] < arrB[0]:
             merged_arr.append(arrB.pop(0))
