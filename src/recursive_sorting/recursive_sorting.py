@@ -7,7 +7,7 @@ def merge(arrA, arrB):
     a = 0
     b = 0
 
-    while a < len(arrA) and b < len(arrB):
+    while a < elements:
         # compare the elements that a and b point at
         if arrA[a] < arrB[b]:
             merged_arr.append(arrA[a])
@@ -30,7 +30,7 @@ def merge(arrA, arrB):
 
 # TO-DO: implement the Merge Sort function below USING RECURSION
 def merge_sort(arr):
-    # Our base case is when the lists length is 1
+    # Our base case is when each lists length is 1
     # // is Floor division - division that results into whole number adjusted to the left in the number line
     if len(arr) > 1:
         # Return everything up to the length of the array divided by 2, round down to whole number to the left
@@ -73,9 +73,20 @@ def merge_in_place(arr, start, mid, end):
     return arr
 
 
-def merge_sort_in_place(arr, l, r):
-    # Your code here
+# 1 is the for the left index and r is the right index of
+# the sub-array of arr to be sorted
 
+def merge_sort_in_place(arr, left, right):
+    # Your code here
+    if left < right:
+        # Split the given array into 2 and create the middle
+        middle = left + (right - left) // 2
+        # Now sort the left half
+        merge_sort_in_place(arr, left, middle)
+        # Now sort the right half
+        merge_sort_in_place(arr, middle + 1, right)
+
+        merge_in_place(arr, left, middle, right)
     return arr
 
 
