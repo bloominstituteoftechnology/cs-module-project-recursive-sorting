@@ -19,18 +19,22 @@ When you begin interviewing for jobs, you will often encounter problems that hav
 
 ## Instructions and/or completion requirements
 
+- [ ] Implement the binary search algorithm in [searching.py](src/searching/searching.py) in a recursive fashion.
+- [ ] Test your implementation by running `test_searching.py`.
 - [ ] Read through the descriptions of the `merge_sort` algorithm in [Training Kit](https://learn.lambdaschool.com/cs/module/reccRh9h6ccXghfA4/).
-- [ ] Implement `merge_sort` in [recursive_sorting.py](src/recursive_sorting/recursive_sorting.py)
-- [ ] Implement an in-place version of `merge_sort` that does not allocate any additional memory. In other words, the space complexity for this function should be O(1).
-- [ ] Test your implementation by running `test_recursive.py`
+- [ ] Implement `merge_sort` in [sorting.py](src/sorting/sorting.py)
+- [ ] Test your implementation by running `test_sorting.py`.
 
 ## Stretch goals
 
-- [ ] Implement the `timsort` algorithm, which is a real-world sorting algorithm. It is the sorting algorithm that is used when you run Python's built-in `sort` method.
+- [ ] Implement an order-agnostic binary search that correctly performs binary search an array sorted in either ascending order or descending order.
+- [ ] Test your order-agnostic binary search implementation by uncommenting the test in `test_searching.py`.
+- [ ] Implement an in-place version of `merge_sort` that does not allocate any additional memory. In other words, the space complexity for this function should be O(1).
+- [ ] Test your in-place merge sort implementation by uncommenting the test in `test_sorting.py`.
 
 ## Tests
 
-Make sure you test your implementations by running `test_recursive.py`.
+Make sure you test your implementations by running the appropriate tests in `test_searching.py` and `test_sorting.py`.
 
 ## FAQs
 
