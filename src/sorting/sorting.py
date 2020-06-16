@@ -1,19 +1,61 @@
-# TO-DO: complete the helper function below to merge 2 sorted arrays
 def merge(arrA, arrB):
-    elements = len(arrA) + len(arrB)
-    merged_arr = [0] * elements
+    """
+    Merge two arrays, a helper function for `merge_sort`
 
-    # Your code here
+    Args:
+        arrA: First array
+        arrB: Second array
+    
+    Returns:
+        merged_arr: Merged array
 
+    Example:
+        >>> a,b = [10, 20, 30], [1, 2, 3]
+        >>> print(merge(a, b))
+        [1, 2, 3, 10, 20, 30]
+    """
 
+    merged_arr = []
+    while len(arrA) != 0 and len(arrB) != 0:
+        if arrA[0] < arrB[0]:
+            merged_arr.append(arrA[0])
+            arrA.remove(arrA[0])
+        else:
+            merged_arr.append(arrB[0])
+            arrB.remove(arrB[0])
+    if len(arrA) == 0:
+        merged_arr += arrB
+    else:
+        merged_arr += arrA
     return merged_arr
 
-# TO-DO: implement the Merge Sort function below recursively
+
 def merge_sort(arr):
-    # Your code here
+    """
+    Merge sort an array
+
+    Args:
+        arr: Array to sort
+    
+    Returns:
+        arr: Sorted array
+
+    Example:
+        >>> a = [10, 20, 30, 1, 2, 3]
+        >>> print(merge_sort(a))
+        [1, 2, 3, 10, 20, 30]
+    """
+
+    if len(arr) == 0 or len(arr) == 1:
+        return arr
+    else:
+        middle = len(arr)//2
+        a = merge_sort(arr[:middle])
+        b = merge_sort(arr[middle:])
+        return merge(a,b)
 
 
-    return arr
+
 
 # STRETCH: implement the recursive logic for merge sort in a way that doesn't 
 # utilize any extra memory
@@ -21,8 +63,10 @@ def merge_sort(arr):
 # or data structures; it can only re-use the memory it was given as input
 def merge_in_place(arr, start, mid, end):
     # Your code here
+    pass
 
 
 def merge_sort_in_place(arr, l, r):
     # Your code here
+    pass
 
