@@ -35,7 +35,8 @@ def merge_sort(arr):
     # Divide in half
     mid = len(arr) // 2
 
-    left_array = merge_sort(arr[0:mid]) # merge sort either half of the array
+    # Merge sort either half of the array
+    left_array = merge_sort(arr[0:mid]) 
     right_array = merge_sort(arr[mid:len(arr)]) 
 
     # Now we operate as if each half has already been sorted
