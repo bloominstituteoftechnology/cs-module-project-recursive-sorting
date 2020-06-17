@@ -1,4 +1,7 @@
 # Helper function to merge 2 sorted arrays
+from typing import List
+
+
 def merge(arrA, arrB):
     elements = len(arrA) + len(arrB)
     merged_arr = [0] * elements
@@ -49,10 +52,51 @@ def merge_sort(arr):
 # utilize any extra memory
 # In other words, your implementation should not allocate any additional lists 
 # or data structures; it can only re-use the memory it was given as input
-def merge_in_place(arr, start, mid, end):
-    # Your code here
+def merge_in_place(array: List, start, mid, end):
+    # Check if we should use insertions instead of rotations
+    # Set limit at 528 insertions
+    # Mutiply mid - 1 - start by end - mid (check this for off by one error)
+
+    if True: # (mid - 1 - start) * (end - mid) < 528:
+        # If below threshold, use insertions to merge
+        left_index = start
+        right_index = mid
+
+        while left_index < mid and right_index <= end:
+            print(f"Comparing {array[left_index]} and {array[right_index]}")
+            if array[left_index] < array[right_index]:
+                print("Left is smaller")
+                left_index += 1
+            else:
+                print("Right is smaller, doing insertion swap")
+                array.insert(left_index, array.pop(right_index))
+                left_index += 1
+                mid += 1
+                right_index += 1
+
+    # Otherwise, use recursive rotations
+
+    # Start with pointers at half way between mid and start, and mid and end
+    # Do binary search for location of rotation
+    # If left pointer > right pointer, move outward, half way towards start and end
+    # Location found when left pointer > right pointer and left pointer + 1 < right pointer - 1
+    # Rotate items inbetween pointers
+    # Call merge in place with each half
+
     pass
 
-def merge_sort_in_place(arr, l, r):
-    # Your code here
-    pass
+def merge_sort_in_place(array, start, end):
+    if start >= end:
+        return
+
+    mid = (start + end + 1) // 2
+
+    print(f"start: {start} mid: {mid} end: {end}")
+
+    merge_sort_in_place(array, start, mid - 1)
+    merge_sort_in_place(array, mid, end)
+
+    merge_in_place(array, start, mid, end)
+
+
+
