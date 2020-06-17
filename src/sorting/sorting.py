@@ -38,7 +38,6 @@ def merge_sort(arr):
     end = len(arr)
     if end > start + 1:
         mid = int((start + end) / 2)
-        # print(arr[0:mid], arr[mid:end], start, mid, end)
         arrA = merge_sort(arr[0:mid])
         arrB = merge_sort(arr[mid:end])
         arr = merge(arrA, arrB)
