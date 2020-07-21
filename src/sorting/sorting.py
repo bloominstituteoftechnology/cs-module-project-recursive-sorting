@@ -1,3 +1,4 @@
+# Debt to: https://www.youtube.com/watch?v=3aTfQvs-_hA
 def merge(arrA, arrB):
     output = []
     # i <- index of arrA
