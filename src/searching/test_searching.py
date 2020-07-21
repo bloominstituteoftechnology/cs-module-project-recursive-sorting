@@ -1,6 +1,7 @@
 import unittest
 import random
-from searching import *
+from searching import binary_search, agnostic_binary_search
+
 
 class RecursiveSortingTests(unittest.TestCase):
     def test_binary_search(self):
@@ -24,6 +25,7 @@ class RecursiveSortingTests(unittest.TestCase):
         self.assertEqual(agnostic_binary_search(descending, 49), 3)
         self.assertEqual(agnostic_binary_search(descending, -17), 7)
         self.assertEqual(agnostic_binary_search(descending, -1), -1)
+
 
 if __name__ == '__main__':
     unittest.main()
