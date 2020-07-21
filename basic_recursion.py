@@ -10,10 +10,8 @@ def countdown_to_one(n):
     print(n)
 
 
-​
 countdown_to_one(3)
-​
-​
+
 '''
 Example: Double Countdown
 '''
@@ -27,15 +25,11 @@ def countdown(n):
     countdown(n-1)
 
 
-​
 countdown(3)
-​
 
-​
 '''
 Example: Recursive Sum
 '''
-​
 
 
 def sum_list(items):  # Time complexity: O(n); Space: O(n)
@@ -45,15 +39,6 @@ def sum_list(items):  # Time complexity: O(n); Space: O(n)
         return items[0] + sum_list(items[1:])  # recursive case
 
 
-​
-​
-​
-​
-​
-​
-​
-
-​
 '''
 Example: Recursive Factorial
 '''
@@ -66,5 +51,4 @@ def recursive_factorial(n):
         return n * recursive_factorial(n - 1)  # recursive call
 
 
-​
 recursive_factorial(5)
