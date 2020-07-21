@@ -11,18 +11,18 @@ def partition(data):
     left = []
     right = []
 
-
-​
   # We need to loop through each item
-  for current in data[1:]:
-       # if it's smaller or equal, append to left
-       if current <= pivot:
+    for current in data[1:]:
+        # if it's smaller or equal, append to left
+        if current <= pivot:
             left.append(current)
         # if it's bigger, add to RHS storage
         else:
             right.append(current)
-​
-  return left, right, pivot
+
+    return left, right, pivot
+
+
 ​
 ​
 # What kind of input will we get?
@@ -35,12 +35,12 @@ def quicksort(data):
     if len(data) <= 1:
         return data
 
+    left, right, pivot = partition(data)
+
+    # (recursive case) Recursively Quick Sort LHS and RHS until
+    return quicksort(left) + [pivot] + quicksort(right)
+
 
 ​
-  left, right, pivot = partition(data)
 ​
-  # (recursive case) Recursively Quick Sort LHS and RHS until
-  return quicksort(left) + [pivot] + quicksort(right)
-​
-​
-quicksort([2, 5, 7,1,3,4,6,9,8])
+quicksort([2, 5, 7, 1, 3, 4, 6, 9, 8])
