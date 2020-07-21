@@ -19,18 +19,20 @@ def binary_search(arr, target, start, end):
 
     # Recursive Version
 
-    # Base Case, target = middle
-    middle = int(end - start)
-    if target == arr[middle]:
-        return target
-
-    elif target < arr[middle]:
-        binary_search(arr, target, 0, middle)
-
-    elif target > arr[middle]:
-        binary_search(arr, target, middle, len(arr) - 1)
+    # Base Case, target == middle
+    if end >= start:
+        middle = (end + start) // 2
+        if arr[middle] == target:
+            return middle
+            
+        elif arr[middle] > target:
+            return binary_search(arr, target, start, middle - 1)
         
-    return -1 # Target Not Found
+        elif arr[middle] < target:
+            return binary_search(arr, target, middle + 1, end)
+
+    else:
+        return -1 # Target Not Found
 
 
 # STRETCH: implement an order-agnostic binary search
@@ -42,4 +44,3 @@ def binary_search(arr, target, start, end):
 def agnostic_binary_search(arr, target):
     # Your code here
     pass
-
