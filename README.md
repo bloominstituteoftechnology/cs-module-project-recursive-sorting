@@ -1,4 +1,4 @@
-# Module Project - Recursive Sorting
+# Module Project - Recursive Sorting 
 
 ## Algorithms
 
