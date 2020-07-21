@@ -10,7 +10,7 @@ def quicksort(array):
     return quicksort(less) + pivot + quicksort(greater)
 
 
-# The next two functions go together:
+# The next two functions go together: ---> Out-Of-Place Quicksort:
 
 def partition(data):
     pivot = data[0]
@@ -34,4 +34,7 @@ def quicksort(data):
 
     left, right, pivot = partition(data)
 
-    return quicksort(left) + pivot + quicksort(right)
+    return quicksort(left) + [pivot] + quicksort(right)
+
+
+print(quicksort([2, 3, 4, 1]))
