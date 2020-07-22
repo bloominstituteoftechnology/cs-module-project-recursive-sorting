@@ -20,24 +20,19 @@ def merge(arrA, arrB):
         merged_arr.append(arrB[j])
         j += 1
     # return merged_arr
-   
-
 
     return merged_arr
 
 # TO-DO: implement the Merge Sort function below recursively
 def merge_sort(arr):
     # Your code here
-   
-
-    def merge_sort(arr):
-        if len(arr) < 2:
-            return arr[:]
-        else:
-            middle = len(arr)//2
-            l1 = merge_sort(arr[:middle])
-            l2 = merge_sort(arr[middle:])
-            return merge(l1, l2)
+    if len(arr) < 2:
+        return arr[:]
+    else:
+        middle = len(arr)//2
+        l1 = merge_sort(arr[:middle])
+        l2 = merge_sort(arr[middle:])
+        return merge(l1, l2)
 
 
     return arr
