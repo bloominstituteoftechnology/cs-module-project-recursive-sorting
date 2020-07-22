@@ -1,22 +1,5 @@
 # Module Project - Recursive Sorting
 
-## Algorithms
-
-## Recursive Sorting
-
-## Objectives
-
-- identify when a problem is amenable to a recursive solution and use recursion to solve it
-- trace and accurately identify the output of a recursive function call
-- write a recursive solution to a problem
-- distinguish when to use, classify the performance, and implement code to conduct classic recursive sorting algorithms
-
-## Introduction
-
-During today's project, you will get a chance to practice the module's objectives. You will be required to write a recursive merge sort algorithm. Knowing when to and how to use recursion will make you a better programmer and developer. It will give you one more tool in your toolbag whenever you face a problem that you need to solve.
-
-When you begin interviewing for jobs, you will often encounter problems that have elegant recursive solutions. Being comfortable with recursion and understanding how recursion works at a deep level is essential in ensuring you are ready to impress hiring managers and (ultimately) can contribute to an engineering team in a significant way.
-
 ## Instructions and/or completion requirements
 
 - [ ] Implement the binary search algorithm in [searching.py](src/searching/searching.py) in a recursive fashion.
