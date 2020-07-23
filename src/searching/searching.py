@@ -6,10 +6,10 @@ def binary_search(arr, target, start, end):
         return -1 # that doesn't work
     if arr[mid] == target: # if the middle element is what you're looking for
         return mid # show middle element
-    if arr[mid] < target: # if middle element is what we want it to be
-        return binary_search(arr, target, mid, end) 
+    if arr[mid] < target: # if middle element is at the top of the tree
+        return binary_search(arr, target, mid, end)  # search right side of tree
     else:
-        return binary_search(arr, target, start, mid)
+        return binary_search(arr, target, start, mid) # if not, search the whole tree
     
 
 
