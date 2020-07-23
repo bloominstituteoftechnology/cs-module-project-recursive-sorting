@@ -2,12 +2,12 @@
 def binary_search(arr, target, start, end):
     mid = int((start + end) / 2)
     
-    if start >= end:
-        return -1
-    if arr[mid] == target:
-        return mid
-    if arr[mid] < target:
-        return binary_search(arr, target, mid, end)
+    if start >= end: # if left side of list is larger than right side 
+        return -1 # that doesn't work
+    if arr[mid] == target: # if the middle element is what you're looking for
+        return mid # show middle element
+    if arr[mid] < target: # if middle element is what we want it to be
+        return binary_search(arr, target, mid, end) 
     else:
         return binary_search(arr, target, start, mid)
     
