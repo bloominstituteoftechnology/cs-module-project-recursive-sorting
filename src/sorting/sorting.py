@@ -107,8 +107,7 @@ def merge_sort(array):
     # Otherwise, recurse toward the base case:
     midpoint = len(array) // 2
     # Divide into 2 subarrays and merge sort each:
-    array_1 = merge_sort(array[:midpoint])
-    array_2 = merge_sort(array[midpoint:])
+    array_1, array_2 = merge_sort(array[:midpoint]), merge_sort(array[midpoint:])
     # Merge the two subarrays:
     return merge(array_1, array_2)
 
