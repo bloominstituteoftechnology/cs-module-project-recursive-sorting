@@ -9,8 +9,8 @@ def binary_search(arr, target, start, end):
             return -1
 
         if arr[middle] == target:
-            print(arr[middle])
-            print(arr.index(arr[middle]))
+            # print(arr[middle])
+            # print(arr.index(arr[middle]))
             return arr.index(arr[middle])
 
         if arr[middle] > target:
