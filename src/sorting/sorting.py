@@ -65,49 +65,56 @@ def merge_in_place(arr, start, mid, end):
     # creating a base case
     if start == end:
         return
-    breakpoint()
-    lpt = mid -1
-    rpt = mid
-    need_rotate = False
+    
+    #lpt = mid -1
+    #rpt = mid
+    #need_rotate = False
     # It will go in here if we need to do iterative swapping
-    if lpt == start or rpt == end:
-        lpt = start +1
-        while lpt <= end:
-        if arr[lpt] < arr[start]:
-            temp = arr[lpt]
-            arr[lpt] = arr[start]
-            arr[start] = temp
-        return
+
+    #lpt = start
+    for i in range(0, end+1):
+        min_index = i
+        for j in range(i+1, end+1):
+            if arr[j] < arr[min_index]:
+                # assigninment of the min_index
+                min_index = j
+        # doing the swapping
+        temp = arr[min_index]
+        arr[min_index] = arr[i]
+        arr[i] = temp
+    return 
+
     # tyring to do the merge in place
     # pick the middle and move outward till we 
     # find one on the l side that is less
     # this here is for when there are more than 2 in length
-    while lpt >=start and rpt <= end:
-        if lpt < rpt:
-            need_rotate = True
-            break
-        # move them closer to the middle
-        lpt -=1
-        rpt +=1
-    # Will rotate those indices that are between the lpt and the rpt
-    if need_rotate == False:
-        return 
-
-    # Will do the swapping of the elements
-    if lpt == mid-1:
-        swapto = lpt
-        swapfrom =rpt
-    else:
-        swapto = lpt +1
-        swapfrom = mid
-    while need_rotate:
-        temp = arr[swapto]
-        arr[swapto] = arr[swapfrom]
-        arr[swapfrom] = temp
-        swapfrom +=1
-        swapto += 1
-        if swapto >= mid:
-            need_rotate = False
+    
+    #while lpt >=start and rpt <= end:
+    #    if lpt < rpt:
+    #        need_rotate = True
+    #        break
+    #    # move them closer to the middle
+    #    lpt -=1
+    #    rpt +=1
+    ## Will rotate those indices that are between the lpt and the rpt
+    #if need_rotate == False:
+    #    return 
+#
+    ## Will do the swapping of the elements
+    #if lpt == mid-1:
+    #    swapto = lpt
+    #    swapfrom =rpt
+    #else:
+    #    swapto = lpt +1
+    #    swapfrom = mid
+    #while need_rotate:
+    #    temp = arr[swapto]
+    #    arr[swapto] = arr[swapfrom]
+    #    arr[swapfrom] = temp
+    #    swapfrom +=1
+    #    swapto += 1
+    #    if swapto >= mid:
+    #        need_rotate = False
     # calling this same call again recursively for the left and the right side
     # left side
     #lend =mid -1
@@ -141,6 +148,10 @@ def merge_in_place(arr, start, mid, end):
             
 
 def merge_sort_in_place(arr, l, r):
+    
+    # checking to see if the array is empty
+    if len(arr) == 0:
+        return
     # the base case is when the left and the right are equal to 
     # each other
     if l == r:
