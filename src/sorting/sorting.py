@@ -69,12 +69,14 @@ def merge_in_place(arr, start, mid, end):
     lpt = mid -1
     rpt = mid
     need_rotate = False
-    # this is the case if there are just two items
-    if lpt == start:
-        if arr[lpt] > arr[rpt]:
+    # It will go in here if we need to do iterative swapping
+    if lpt == start or rpt == end:
+        lpt = start +1
+        while lpt <= end:
+        if arr[lpt] < arr[start]:
             temp = arr[lpt]
-            arr[lpt] = arr[rpt]
-            arr[rpt] = temp
+            arr[lpt] = arr[start]
+            arr[start] = temp
         return
     # tyring to do the merge in place
     # pick the middle and move outward till we 
