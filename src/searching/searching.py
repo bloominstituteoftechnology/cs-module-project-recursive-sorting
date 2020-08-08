@@ -2,6 +2,7 @@
 def binary_search(arr, target, start, end):
 
     if start <= end:
+        # have to add 1 to end because it's taken away in test
         middle = (start + (end + 1)) // 2
         if arr[middle] == target:
             # return index of target not the value
@@ -16,25 +17,6 @@ def binary_search(arr, target, start, end):
 
     else:    # if the end is not greater than start, return
         return -1
-    """
-
-    while start <= end:
-
-        middle = (start + end) // 2
-
-        if arr[middle] == target:
-            # return index of target not the value
-            return middle
-        else:
-            if target < arr[middle]:
-                # if target is less than the value of the mid element, make the element before the middle the last element to search through
-                end = middle - 1
-            else:
-                # if the target is greater than the middle element, make one after the middle element the starting point for the next search
-                start = middle + 1
-    # Same as returning false
-    return -1
-    """
 
 # STRETCH: implement an order-agnostic binary search
 # This version of binary search should correctly find
