@@ -13,7 +13,7 @@ def binary_search(arr, target, start, end):
 
 arr = [-9, -8, -6, -4, -3, -2, 0, 1, 2, 3, 5, 7, 8, 9]
 
-print(binary_search(arr, 0, 0, len(arr)-1))
+print(binary_search(arr, 9, 0, len(arr)-1))
 
 
 # STRETCH: implement an order-agnostic binary search
