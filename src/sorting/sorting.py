@@ -8,26 +8,33 @@ def merge(arrA, arrB):
     indexB = 0
 
     while indexA < (lenA - 1) or indexB < (lenB - 1):
-        if indexA == len(arrA) - 1:
-            return merged_arr + arrB[indexB:]
-        elif indexB == len(arrB) - 1:
-            return merged_arr + arrA[indexA:]
+        if indexA == lenA - 1:
+            while indexB < lenB - 1:
+                merged_arr[lenA + indexB] = arrB[indexB]
+                indexB += 1
+            return merged_arr.extend(arrB[indexB:])
+        elif indexB == lenB - 1:
+            while indexA < lenA - 1:
+                merged_arr[lenB + indexA] = arrA[indexA]
+                indexA += 1
+            return merged_arr.extend(arrB[indexB:])
         else:
             if arrA[indexA] <= arrB[indexB]:
-                merged_arr += arrA[indexA]
+                merged_arr[indexA + indexB] = arrA[indexA]
                 indexA += 1
             else:
-                merged_arr += arrB[indexB]
+                merged_arr[indexA + indexB] = arrB[indexB]
                 indexB += 1
 
     return merged_arr
 
 # TO-DO: implement the Merge Sort function below recursively
 def merge_sort(arr):
-    # Your code here
-
-
-    return arr
+    if len(arr) <= 1:
+        return arr
+    
+    middle = len(arr) // 2
+    return merge(merge_sort(arr[:middle - 1]), merge_sort(arr[middle:]))
 
 # STRETCH: implement the recursive logic for merge sort in a way that doesn't 
 # utilize any extra memory
