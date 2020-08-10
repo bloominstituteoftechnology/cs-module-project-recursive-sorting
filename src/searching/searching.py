@@ -1,15 +1,15 @@
 # TO-DO: Implement a recursive implementation of binary search
-def binary_search(arr, target, start, end):
-    if end < start:
-        return -1
+# def binary_search(arr, target, start, end):
+#     if end < start:
+#         return -1
     
-    middle = (end + start) // 2
-    if arr[middle] == target:
-        return middle
-    elif arr[middle] > target:
-        return binary_search(arr, target, start, middle - 1)
-    else:
-        return binary_search(arr, target, middle + 1, end)
+#     middle = (end + start) // 2
+#     if arr[middle] == target:
+#         return middle
+#     elif arr[middle] > target:
+#         return binary_search(arr, target, start, middle - 1)
+#     else:
+#         return binary_search(arr, target, middle + 1, end)
 
 
 # STRETCH: implement an order-agnostic binary search
@@ -24,19 +24,18 @@ def agnostic_binary_search(arr, target):
     elif len(arr) == 1:
         return 0 if (arr[0] == target) else -1
     
-    if arr[0] < arr[1]:
-        return binary_search(arr, target, 0, len(arr) - 1)
-    else:
-        return binary_search_descending(arr, target, 0, len(arr) - 1)
+    isAscending = arr[0] < arr[len(arr) - 1]
+    return binary_search(arr, target, 0, len(arr) - 1, isAscending)
 
-def binary_search_descending(arr, target, start, end):
+def binary_search(arr, target, start, end, isAscending = True):
     if end < start:
         return -1
     
     middle = (end + start) // 2
     if arr[middle] == target:
         return middle
-    elif arr[middle] < target:
-        return binary_search_descending(arr, target, start, middle - 1)
+    elif (arr[middle] > target and isAscending) or \
+        (arr[middle] < target and not isAscending):
+        return binary_search(arr, target, start, middle - 1, isAscending)
     else:
-        return binary_search_descending(arr, target, middle + 1, end)
+        return binary_search(arr, target, middle + 1, end, isAscending)
