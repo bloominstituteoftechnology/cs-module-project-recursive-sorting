@@ -1,91 +1,77 @@
-# TO-DO: complete the helper function below to merge 2 sorted arrays
-def merge(arrA, arrB):
-    print(f"just in merge function - arrA: {arrA} | arrB: {arrB}")
-    if arrA == None:
-        arrA = []
-    if arrB == None:
-        arrB = []
+def merge(arrL, arrR):
+    # Special Case: left slice value is None, return the right slice
+    if arrL == None:
+        # No left array, return the right array
+        return arrR
 
-    if len(arrA) == 0 and len(arrB) == 0:
-        return []
-        
-    # Merging a right array with an empty array -> return right
-    if len(arrA) == 0:
-        # only arrB has elements, return arrB
-        return arrB
+    # Special Case: right slice value is None, return the left slice
+    if arrR == None:
+        # No right array, return the left array
+        return arrL
 
-    # Merging a left array with an empty array -> return left
-    if len(arrB) == 0:
-        # only arrA has elements, return arrA
-        return arrA
+    # Special Case: both parameter values have one element, return one slice with both ordered values
+    if len(arrL) == 1 and len(arrR) == 1:
+        # both arrays have only 1 element, return a sorted array
+        if arrL[0] <= arrR[0]:
+            return [arrL[0], arrR[0]]
+        else: 
+            return [arrR[0], arrL[0]]
 
-    # Merging two arrays each with on element
-    if len(arrA) == 1 and len(arrB) == 1:
-        if arrA[0] <= arrB[0]:
-            # left <= right return [left, right]
-            return [arrA[0], arrB[0]]
-        else:
-            # left > right return [right, left]
-            return [arrB[0], arrA[0]]
+    # General Case: step thru both parameters
+    merged_arr = []
 
-    # There are more than two elements across both slices
-    elements = len(arrA) + len(arrB)
-    merged_arr = [0] * elements
-
+    # Initialize the left and right slice indices
     idx_lft = 0
     idx_rgt = 0
 
-    # Do we have some elements left to review?
-    flg_proc = ((idx_lft < len(arrA)) or (idx_rgt < len(arrB)))
+    # Determine if there are still elements to process
+    flg_ctnu = (idx_lft < len(arrL)) or (idx_rgt < len(arrR))
 
-    while flg_proc:
-        if idx_rgt >= len(arrB):
-            # no more "right" elements; merge the current
-            #   left element
-            merged_arr.append(arrA[idx_lft])
+    # Process while there are elements to merge
+    while flg_ctnu:
+        
+        if idx_rgt >= len(arrR):
+            # No more right slice elements? Merge the current left element
+            merged_arr.append(arrL[idx_lft])
             idx_lft = idx_lft + 1
-        elif idx_lft >= len(arrA):
-            # no more "left" elements; merge the current
-            #   right element
-            merged_arr.append(arrB[idx_rgt])
+        elif idx_lft >= len(arrL):
+            # No more left slice elements? Merge the current right element
+            merged_arr.append(arrR[idx_rgt])
+            idx_rgt = idx_rgt + 1
+        elif arrR[idx_rgt] <= arrL[idx_lft]:
+            # Is the current right slice element less than the left slice element?
+            #    Merge the right slice element
+            merged_arr.append(arrR[idx_rgt])
             idx_rgt = idx_rgt + 1
         else:
-            # Is the current right slice element <= the
-            #   current left slice element?
-            if arrB[idx_rgt] <= arrA[idx_lft]:
-                # Merge the current right slice element
-                merged_arr.append(arrB[idx_rgt])
-                idx_rgt = idx_rgt + 1
-            else:
-                # The current left slice element is < the
-                #   current right slice element.  Merge the 
-                #   current left slice element
-                merged_arr.append(arrA[idx_lft])
-                idx_lft = idx_lft + 1
+            # Current left slice element is less that the right slice element
+            #    Merge the left slice element
+            merged_arr.append(arrL[idx_lft])
+            idx_lft = idx_lft + 1
 
-        # Continue processing? (some left and/or right elements left to inspect)
-        flg_proc = ((idx_lft < len(arrA)) or (idx_rgt < len(arrB)))
-
+        # Determine if the process should continue
+        flg_ctnu = (idx_lft < len(arrL)) or (idx_rgt < len(arrR))
+    
+    # Merging complete, return the merged array
     return merged_arr
 
-# TO-DO: implement the Merge Sort function below recursively
 def merge_sort(arr):
-    print("just in merge_sort: ", arr, len(arr))
+    # Initialize the return array value
+    rt_arr = []
 
-    # Base Case: is len(arr) = 1?
+    # Process an inbound array with more than one element
     if len(arr) > 1:
-        # Not base case, keep processing
-        idx_mid = len(arr) // 2
-        # Invoke the function on the "left" slice
-        print(f"calling merge function - arrA: {arr[:idx_mid]} | arrB: {arr[idx_mid:]}")
-        merge(merge_sort(arr[:idx_mid]), merge_sort(arr[idx_mid:]))
-    elif len(arr) == 1:
-        return arr
-    elif len(arr) == 0:
-        print("merge_sort on empty slice")
-        return []
+        idx_mid =  (len(arr)-1) // 2
+        arr_lft = arr[:idx_mid+1]
+        arr_rht = arr[idx_mid+1:]
+        # Construct a merged (sorted) array of the left and right slices
+        rt_arr = merge(merge_sort(arr_lft), merge_sort(arr_rht))
     else:
-        print("does this occur?")
+        # The inbound array only has one element, return the array
+        rt_arr = arr
+    
+    # Return the merged array
+    return rt_arr
 
 # STRETCH: implement the recursive logic for merge sort in a way that doesn't 
 # utilize any extra memory
