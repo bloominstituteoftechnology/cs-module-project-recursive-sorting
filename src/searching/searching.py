@@ -21,5 +21,8 @@ def binary_search(arr, target, start, end):
 # or iteratively
 def agnostic_binary_search(arr, target):
     # Your code here
-    pass
+    dict_arr = {}
+    for i, v in enumerate(arr):
+        dict_arr[v] = i
+    return dict_arr.get(target, -1)
 
