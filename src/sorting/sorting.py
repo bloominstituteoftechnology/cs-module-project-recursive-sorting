@@ -1,29 +1,33 @@
 # TO-DO: complete the helper function below to merge 2 sorted arrays
-def merge(arrA, arrB, n1, n2):
-    # elements = len(arrA) + len(arrB)
-    merged_arr = [0] * (n1 + n2)
+def merge(arrA, arrB):
+    elements = len(arrA) + len(arrB)
+    merged_arr = [0] * elements
 
     i = 0 
     j = 0 
     k = 0 
 
-    while i < n1 and j < n2: 
+    # traverse both arrays 
+    while i < len(arrA) and j < len(arrB): 
+        # check if elem of 1st array is smaller than 
+        # current element of second array. 
         if arrA[i] < arrB[j]: 
             merged_arr[k] = arrA[i] 
             k = k + 1
             i = i + 1
+            
         else: 
             merged_arr[k] = arrB[j] 
             k = k + 1
-            j = j + 1
-
-    while i < n1: 
+            j = j + 1 
+     # store remaining elems  
+    while i < len(arrA): 
         merged_arr[k] = arrA[i] 
         k = k + 1
         i = i + 1
 
-    while j < n2: 
-        merged_arr[k] = arrB[j]; 
+    while j < len(arrB): 
+        merged_arr[k] = arrB[j]
         k = k + 1
         j = j + 1
 
@@ -32,33 +36,9 @@ def merge(arrA, arrB, n1, n2):
 # TO-DO: implement the Merge Sort function below recursively
 def merge_sort(arr):
     if len(arr) >1: 
-        mid = len(arr)//2 
-        L = arr[:mid] 
-        R = arr[mid:]
-  
-        merge_sort(L)
-        merge_sort(R)
-  
-        i = j = k = 0
- 
-        while i < len(L) and j < len(R): 
-            if L[i] < R[j]: 
-                arr[k] = L[i] 
-                i+= 1
-            else: 
-                arr[k] = R[j] 
-                j+= 1
-            k+= 1
-          
-        while i < len(L): 
-            arr[k] = L[i] 
-            i+= 1
-            k+= 1
-          
-        while j < len(R): 
-            arr[k] = R[j] 
-            j+= 1
-            k+= 1
+        l = merge_sort(arr[0: len(arr) // 2])
+        r = merge_sort(arr[len(arr) //2:])
+        arr = merge (l, r)
 
     return arr
 
