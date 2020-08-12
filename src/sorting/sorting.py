@@ -28,14 +28,13 @@ def merge(arrA, arrB):
 
 def merge_sort(arr):
     # Your code here
-    if len(arr) < 2:
-        return arr
+    if len(arr) > 1:
+      
     
-    mid = int((len(arr))/2)  # Finding the mid of the array
-    leftArr = merge_sort(arr[:mid])  # Dividing the array arr
-    rightArr = merge_sort(arr[mid:])  # into 2 halves
-
-    return merge_sort(leftArr, rightArr)
+        mid = len(arr) // 2  # Finding the mid of the array
+        leftArr = merge_sort(arr[:mid])  # Dividing the array arr
+        rightArr = merge_sort(arr[mid:])  # into 2 halves
+        return merge(leftArr, rightArr)
 
     return arr
     # if len(arr)<1:return arr
