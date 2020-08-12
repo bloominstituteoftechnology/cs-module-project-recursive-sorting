@@ -2,7 +2,7 @@
 def binary_search(arr, target, start, end):
     # Your code here
     start = 0
-    end = len(arr)
+    end = len(arr)-1
 
     if start > end:
         return False
@@ -11,8 +11,8 @@ def binary_search(arr, target, start, end):
         midpoint = (start + end) // 2
 
         if target == arr[midpoint]:
-            return True
-        elif target < arr[midpoint]:
+            return midpoint
+        if target < arr[midpoint]:
             return binary_search(arr, target, start, midpoint-1)
         else:
             return binary_search(arr, target, midpoint+1, end)
