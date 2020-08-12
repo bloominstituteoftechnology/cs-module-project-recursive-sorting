@@ -1,27 +1,24 @@
 # TO-DO: Implement a recursive implementation of binary search
-def binary_search(arr, target, l, h, r=False):
+def binary_search(arr, target, l, h):
+    if l <= h:
     # Your code here
-    m = (l + h) // 2
-    print('l', l, 'h', h, 'm', m)
-    if arr[m] == target:
-        return m
-    elif arr[m] < target:
-        if r: l = m + 1
-        else: l = m
-    else:
-        if r: h = m
-        else: h = m + 1
-    if r is True and l < h:
-        return binary_search(arr, target, l, h, r)
-    elif r is False and h <= l:
-        return binary_search(arr, target, l, h, r)
+        m = (l + h) // 2
+        print('l', l, 'h', h, 'm', m)
+        if arr[m] == target:
+            return m
+        elif arr[m] < target:
+            return binary_search(arr, target, m + 1, h)
+        else:
+            return binary_search(arr, target, l, m - 1)
     else:
         return -1
 
-arr = [3, 7, 10, 12, 22, 99]
-arr.reverse()
+arr = [101, 98, 57, 49, 45, 13, -3, -17, -61]
+arr2 = [1,2,3,4,5]
+# print(binary_search(arr2, 5, 0, len(arr2) - 1))
+# # arr.reverse()
+# print(arr2)
 print(arr)
-# print(binary_search(arr, 2, 0, len(arr) - 1))
 
 # STRETCH: implement an order-agnostic binary search
 # This version of binary search should correctly find 
@@ -30,10 +27,23 @@ print(arr)
 # You can implement this function either recursively 
 # or iteratively
 def agnostic_binary_search(arr, target):
-    l, h, r = 0, len(arr) - 1, True
+    l, h = 0, len(arr) - 1
+    def rev_binary_search(arr, target, l, h):
+        if l >= h:
+            m = (l + h) // 2
+            print('l', l, 'h', h, 'm', m)
+            if arr[m] == target:
+                return m
+            elif arr[m] < target:
+                return rev_binary_search(arr, target, m - 1, h)  
+            else:
+                return rev_binary_search(arr, target, l, m + 1)                                 
+        else:
+            return -1
     if arr[l] > arr[h]:
-        l, h = h, l
-        r = False
-    return binary_search(arr, target, l, h, r)
+        return rev_binary_search(arr, target, h, l)
+    else:
+        return binary_search(arr, target, l, h)
 
-print(agnostic_binary_search(arr, 3))
+print(agnostic_binary_search(arr, -61))
+# print(agnostic_binary_search(arr2, 5))
