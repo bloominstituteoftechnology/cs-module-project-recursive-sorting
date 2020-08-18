@@ -1,7 +1,7 @@
 # TO-DO: Implement a recursive implementation of binary search
 def binary_search(arr, target, start, end):
     # Your code here
-    if end < 0:
+    if end < start:
         return - 1
 
     mid = int(start + end / 2)
