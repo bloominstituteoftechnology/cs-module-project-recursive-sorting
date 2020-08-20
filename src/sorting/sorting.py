@@ -43,7 +43,7 @@ def merge_sort(arr):
     # otherwise, it keeps calling merge_sort... keep splitting them in half
                               # starting at 0 and up to but not including len(arr) // 2
         left = merge_sort(arr[0 : len(arr) // 2]) # not included in the left side
-        right = merge_sort(arr[len(arr) // 2 : ]) # Is included on the right side..
+        right = merge_sort(arr[len(arr) // 2 : ]) # Is included on the right side.. up to the end of the array 
         arr = merge(left, right)
 
     return arr
