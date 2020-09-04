@@ -1,6 +1,24 @@
-# TO-DO: Implement a recursive implementation of binary search
 def binary_search(arr, target, start, end):
-    # Your code here
+    # Set low / high / middle pointers
+    low = start
+    high = end
+    mid = (low + high) // 2
+
+    # BASE CASE: 
+    # Once low > high, return -1 (not found)
+    if low > high:
+        return -1
+
+    if arr[mid] == target:
+        return arr.index(target)
+
+    if arr[mid] < target:
+        low = mid + 1
+        return binary_search(arr, target, low, high)
+
+    if arr[mid] > target:
+        high = mid - 1
+        return binary_search(arr, target, low, high)
 
 
 # STRETCH: implement an order-agnostic binary search
@@ -11,4 +29,4 @@ def binary_search(arr, target, start, end):
 # or iteratively
 def agnostic_binary_search(arr, target):
     # Your code here
-
+    pass
