@@ -20,9 +20,9 @@ def merge(arrA, arrB):
         k += 1
     
     while j < len(arrA):
-        merged_arr[k] = arrB[j]
-        i += 1
-    k += 1
+        merged_arr[k] = arrA[j]
+        k += 1
+        j += 1
 
     while i < len(arrB):
         merged_arr[k] = arrB[i]
@@ -40,7 +40,7 @@ def merge_sort(arr):
         l = 0
         m = (l + r) // 2
         left = merge_sort(arr[:m])
-        right = merge_sort(arr[:m])
+        right = merge_sort(arr[m:])
         return merge(left, right)
 
     return arr
