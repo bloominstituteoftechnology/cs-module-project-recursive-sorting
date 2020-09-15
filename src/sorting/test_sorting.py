@@ -40,6 +40,9 @@ class RecursiveSortingTests(unittest.TestCase):
     #     merge_sort_in_place(arr5, 0, len(arr5)-1)
     #     self.assertEqual(arr5, sorted(arr5_copy))
 
+'''
+python src/sorting/test_sorting.py
+'''
 
 if __name__ == '__main__':
     unittest.main()
