@@ -2,30 +2,40 @@
 def merge(arrA, arrB):
     elements = len(arrA) + len(arrB)
     merged_arr = [0] * elements
+    merged_arr = arrA + arrB
+    # print(merged_arr)
     left_p = 0
     right_p = 0
-    arry_i = 0
+    array_i = 0
 
-    # while left_p < len(arrA) and right_p < len(arrB):
-    #     if arrA[left_p] < arrB[right_p]:
-    #         merged_arr[arry_i] = arrA[left_p]
-    #         left_p += 1
-    #     else:
-    #         merged_arr[arry_i] = arrB[right_p]
-    #         right_p += 1
-    #
-    #
-    #     arry_i += 1
-    #
-    # while left_p < len(arrA):
-    #     merged_arr[arry_i] = arrA[left_p]
-    #     arry_i += 1
-    #     left_p += 1
-    #
-    # while right_p < len(arrB):
-    #     merged_arr[arry_i] = arrB[right_p]
-    #     arry_i += 1
-    #     right_p += 1
+
+    while left_p < len(arrA) and right_p < len(arrB):
+        if arrA[left_p] < arrB[right_p]:
+            merged_arr[array_i] = arrA[left_p]
+            left_p += 1
+        else:
+            print(arrA)
+            print(arrB)
+            merged_arr[array_i] = arrB[right_p]
+            right_p += 1
+
+        array_i += 1
+    print(merged_arr)
+
+    while left_p < len(arrA):
+        print(f"arryA:{arrA}, arry:{merged_arr}")
+        merged_arr[array_i] = arrA[left_p]
+        left_p += 1
+        array_i += 1
+
+    while right_p < len(arrB):
+        merged_arr[array_i] = arrB[right_p]
+        right_p += 1
+        array_i += 1
+
+
+
+
 
     return merged_arr
 
@@ -39,6 +49,8 @@ def merge_sort(arr):
     mid = len(arr) // 2
     left = merge_sort(arr[:mid])
     right = merge_sort(arr[mid:])
+
+
 
 
 
@@ -58,5 +70,5 @@ def merge_sort_in_place(arr, l, r):
     pass
 
 
-arr = [12, 3, 9, 30, 23, 41, 2, 1]
-print(merge_sort(arr))
+arr = [12, 3, 9, 30, 23, 41, 2, 1, 6]
+merge_sort(arr)

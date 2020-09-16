@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/src/sorting/sorting.py" line="63" />
+    <bookmark url="file://$PROJECT_DIR$/src/sorting/sorting.py" line="15" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="e5223086-4d32-41d5-9dbd-d65a8ce5529d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -25,19 +29,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/sorting/sorting.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sorting/test_sorting.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <folding>
-                <element signature="e#0#15#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="1224">
+              <caret line="72" column="36" selection-start-line="72" selection-start-column="36" selection-end-line="72" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -45,11 +38,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/searching/test_searching.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="3" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
-              <folding>
-                <element signature="e#0#15#0" expanded="true" />
-              </folding>
+            <state>
+              <caret column="13" selection-start-column="13" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -87,40 +77,10 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="cs-module-project-recursive-sorting" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cs-module-project-recursive-sorting" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cs-module-project-recursive-sorting" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cs-module-project-recursive-sorting" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cs-module-project-recursive-sorting" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cs-module-project-recursive-sorting" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="searching" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cs-module-project-recursive-sorting" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cs-module-project-recursive-sorting" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="sorting" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../CS28/week2/Sorting" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../cs-module-project-algorithms" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -134,7 +94,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python tests.Unittests in test_sorting.py">
+  <component name="RunManager" selected="Python.sorting">
     <configuration name="sorting" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="cs-module-project-recursive-sorting" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -186,8 +146,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.Unittests in test_sorting.py" />
         <item itemvalue="Python.sorting" />
+        <item itemvalue="Python tests.Unittests in test_sorting.py" />
         <item itemvalue="Python tests.Unittests in test_searching.py" />
       </list>
     </recent_temporary>
@@ -206,18 +166,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittests_in_test_searching_py - 2020.09.14 at 16h 20m 40s.xml">
-      <configuration name="Unittests in test_searching.py" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_in_test_searching_py - 2020.09.14 at 16h 27m 32s.xml">
-      <configuration name="Unittests in test_searching.py" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_in_test_searching_py - 2020.09.14 at 16h 27m 46s.xml">
-      <configuration name="Unittests in test_searching.py" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_in_test_searching_py - 2020.09.14 at 16h 31m 49s.xml">
-      <configuration name="Unittests in test_searching.py" configurationId="tests" />
-    </history-entry>
     <history-entry file="Unittests_in_test_searching_py - 2020.09.14 at 16h 34m 04s.xml">
       <configuration name="Unittests in test_searching.py" configurationId="tests" />
     </history-entry>
@@ -236,16 +184,29 @@
     <history-entry file="Unittests_in_test_sorting_py - 2020.09.15 at 15h 58m 54s.xml">
       <configuration name="Unittests in test_sorting.py" configurationId="tests" />
     </history-entry>
+    <history-entry file="Unittests_in_test_sorting_py - 2020.09.15 at 17h 47m 37s.xml">
+      <configuration name="Unittests in test_sorting.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_test_sorting_py - 2020.09.16 at 07h 08m 57s.xml">
+      <configuration name="Unittests in test_sorting.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_test_sorting_py - 2020.09.16 at 07h 12m 08s.xml">
+      <configuration name="Unittests in test_sorting.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_test_sorting_py - 2020.09.16 at 07h 12m 12s.xml">
+      <configuration name="Unittests in test_sorting.py" configurationId="tests" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="953" y="0" width="974" height="1047" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.46280086" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.032822758" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -260,28 +221,18 @@
     </layout>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/searching/test_searching.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="13" selection-start-column="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor />
           <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/searching/searching.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/searching/test_searching.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="3" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -294,10 +245,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/searching/searching.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/sorting/sorting.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+        <state relative-caret-position="1224">
+          <caret line="72" column="36" selection-start-line="72" selection-start-column="36" selection-end-line="72" selection-end-column="36" />
         </state>
       </provider>
     </entry>
