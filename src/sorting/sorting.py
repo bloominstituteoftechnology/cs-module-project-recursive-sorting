@@ -39,8 +39,8 @@ def merge_sort(arr):
 # or data structures; it can only re-use the memory it was given as input
 def merge_in_place(arr, start, mid, end):
     # Your code here
-
+    pass
 
 def merge_sort_in_place(arr, l, r):
     # Your code here
-
+    pass
