@@ -5,6 +5,10 @@ def binary_search(arr, target, start, end):
     # Your code here
 
     ## did not find target
+    if start is None and end is None:
+        start = 0
+        end = len(arr)
+    
     if start > end:
         return -1
     else:
