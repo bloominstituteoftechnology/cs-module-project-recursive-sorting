@@ -1,7 +1,29 @@
 # TO-DO: Implement a recursive implementation of binary search
 def binary_search(arr, target, start, end):
+    ## arr is SORTED data, target is searched value
+    ## start is beginning index of array, end is final index
     # Your code here
 
+    ## did not find target
+    if start is None and end is None:
+        start = 0
+        end = len(arr)
+    
+    if start > end:
+        return -1
+    else:
+        ## search using the center of the beginning and end indexes
+        mid = (start + end) // 2
+        
+        ## found target using mid
+        if arr[mid] == target:
+            return mid
+        ## value is larger, search larger half recursively
+        elif arr[mid] > target:
+            return binary_search(arr, target, start, mid - 1)
+        ## value is smaller, search smaller half recusively
+        else:
+            return binary_search(arr, target, mid +1, end)
 
 # STRETCH: implement an order-agnostic binary search
 # This version of binary search should correctly find 
@@ -12,3 +34,4 @@ def binary_search(arr, target, start, end):
 def agnostic_binary_search(arr, target):
     # Your code here
 
+    pass
