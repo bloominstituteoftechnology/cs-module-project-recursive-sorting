@@ -4,7 +4,7 @@
 
 ## Recursive Sorting
 
-## Objectives 
+## Objectives
 
 - identify when a problem is amenable to a recursive solution and use recursion to solve it
 - trace and accurately identify the output of a recursive function call
