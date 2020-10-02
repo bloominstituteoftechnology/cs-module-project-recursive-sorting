@@ -1,4 +1,3 @@
-# TO-DO: complete the helper function below to merge 2 sorted arrays
 def merge(arrA, arrB):
 	elements = len(arrA) + len(arrB)
 	merged_arr = []
@@ -7,10 +6,6 @@ def merge(arrA, arrB):
 	b_index = 0
 	
 	for i in range(0, elements):
-		print('merged_arr =', merged_arr)
-		print('i =', i)
-		print('a_index =', a_index)
-		print('b_index =', b_index)
 
 		# OOB check A
 		if a_index == len(arrA):
@@ -39,28 +34,34 @@ def merge(arrA, arrB):
 
 	return merged_arr
 
-"""
 def merge_sort(arr):
-	#m =
+	m = int(len(arr)/2) 		# Calculate middle
+	left = arr[:m]
+	right = arr[m:]
+	
+	if len(left) > 2:			# Recursive merge_sort() on left side until its been completely sorted
+		left = merge_sort(left)
 
-    return arr
+	if len(right) > 2:			# Recursive merge_sort() on right side until its been completely sorted
+		right = merge_sort(right)
+
+	if len(left) == 2:			# Sort 2-member array (left)  # This could probably be shorter code with a for loop of 2 iterations but this is more readable
+		if left[0] > left[1]:
+			left[0], left[1] = left[1], left[0]
+
+	if len(right) == 2:			# Sort 2-member array (right)
+		if right[0] > right[1]:
+			right[0], right[1] = right[1], right[0]
+	
+	arr = merge(left, right)	# Merge sorted (left) & (sorted) right
+	return arr
 
 # STRETCH: implement the recursive logic for merge sort in a way that doesn't 
 # utilize any extra memory
 # In other words, your implementation should not allocate any additional lists 
 # or data structures; it can only re-use the memory it was given as input
-def merge_in_place(arr, start, mid, end):
+#def merge_in_place(arr, start, mid, end):
     # Your code here
 
-
-def merge_sort_in_place(arr, l, r):
+#def merge_sort_in_place(arr, l, r):
     # Your code here
-"""
-
-if __name__ == "__main__":
-	arr1 = [3, 6, 9]
-	arr2 = [6, 2000, 4000]
-	print('arr1 = ', arr1)
-	print('arr2 = ', arr2)
-	arr3 = merge(arr1, arr2)
-	print('arr3 = ', arr3)
