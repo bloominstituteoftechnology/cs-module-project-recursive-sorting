@@ -15,7 +15,7 @@ def merge(arrA, arrB):
         for i in arrA:
             for j in arrB:
                 if i < j:
-                    return merge(arrA, arrB + 1
+                    merged_arr.append(i)
 
     return merged_arr
 
