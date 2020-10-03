@@ -1,10 +1,21 @@
 # TO-DO: complete the helper function below to merge 2 sorted arrays
+from searching import searching
+
 def merge(arrA, arrB):
     elements = len(arrA) + len(arrB)
     merged_arr = [0] * elements
 
     # Your code here
+    if len(arrA) == 0:
+        return arrB
+    elif len(arrB) == 0:
+        return arrA
 
+    else:
+        for i in arrA:
+            for j in arrB:
+                if i < j:
+                    return merge(arrA, arrB + 1
 
     return merged_arr
 
