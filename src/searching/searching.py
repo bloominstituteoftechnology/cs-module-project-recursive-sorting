@@ -32,9 +32,33 @@ def binary_search(arr, target, start, end):
 # You can implement this function either recursively 
 # or iteratively
 def agnostic_binary_search(arr, target):
-    # Your code here
-    pass
+    #check to see what order it's in 
+    first = arr[0]
+    last = arr[len(arr) - 1]
+    
+    #if in ascending order do a regular binary search
+    if first < last:
+        return binary_search(arr, target, 0, len(arr)-1)
+    # otherwise send in the number backwards
+    else:
+        first = 0
+        last = (len(arr) - 1)
+        found = False
 
-arr1 = [-9, -8, -6, -4, -3, -2, 0, 1, 2, 3, 5, 7, 8, 9]
+        while first <= last and not found:
+            middle = (first + last) // 2
+            
+            if target == arr[middle]:
+                found = True
+                return middle
+            else:
+                if target > arr[middle]:
+                    last = middle - 1
+                else:
+                    first = middle + 1
+        return -1 
 
-print(binary_search(arr1, -8, 0, len(arr1)-1))
+ascending = [2, 4, 12, 14, 17, 30, 46, 47, 51, 54, 61]
+descending = [101, 98, 57, 49, 45, 13, -3, -17, -61]
+
+print(agnostic_binary_search(descending, 49))
