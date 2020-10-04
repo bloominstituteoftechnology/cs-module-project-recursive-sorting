@@ -3,28 +3,28 @@ def merge(arrA, arrB):
     elements = len(arrA) + len(arrB)
     merged_arr = [0] * elements
 
+    def move_to_merged_from(arr):
+        nonlocal elements, merged_arr
+        # assign to `merged_arr` at correct index
+        merged_arr[-elements] = arr[0]
+        # remove from `arr`
+        del arr[0]
+        # update remaining `elements` count
+        elements -= 1
+
     while elements:
         if arrA and arrB:
             if arrA[0] < arrB[0]:
-                # assign to merged_arr at correct index
-                merged_arr[-elements] = arrA[0]
-                # remove from A
-                del arrA[0]
-                elements -= 1
+                move_to_merged_from(arrA)
             else:
-                merged_arr[-elements] = arrB[0]
-                del arrB[0]
-                elements -= 1
+                move_to_merged_from(arrB)
         else:
             # one array empty, one with 1+ elements left
             if arrA:
-                merged_arr[-elements] = arrA[0]
-                del arrA[0]
-                elements -= 1
+                move_to_merged_from(arrA)
             if arrB:
-                merged_arr[-elements] = arrB[0]
-                del arrB[0]
-                elements -= 1
+                move_to_merged_from(arrB)
+    
 
     return merged_arr
 
