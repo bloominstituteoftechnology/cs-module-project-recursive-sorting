@@ -38,10 +38,32 @@ def merge_sort(arr):
 # utilize any extra memory
 # In other words, your implementation should not allocate any additional lists 
 # or data structures; it can only re-use the memory it was given as input
-# def merge_in_place(arr, start, mid, end):
-#     # Your code here
+def merge_in_place(arr, start, mid, end):
+    a = start
+    b = mid
+    while True:
+        if a >= mid or b > end:
+            return
+        if arr[a] <= arr[b]:
+            a += 1
+        else:
+            smallest = arr[b]
+            for i in reversed(range(a, b)):
+                arr[i + 1] = arr[i]
+            arr[a] = smallest
+            a += 1
+            b += 1
+            mid += 1
 
+def merge_sort_in_place(arr, l, r):
+    mid = (l + r) // 2 + 1
+    if r - l > 1:
+        merge_sort_in_place(arr, l, mid - 1)
+        merge_sort_in_place(arr, mid, r)
+    
+    merge_in_place(arr, l, mid, r)
 
-# def merge_sort_in_place(arr, l, r):
-#     # Your code here
+    return arr
 
+arr1 = [4, 3, 2, 1]
+merge_sort_in_place(arr1, 0, 3)
