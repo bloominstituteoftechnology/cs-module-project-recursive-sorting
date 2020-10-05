@@ -3,7 +3,7 @@
 def binary_search(arr, target, start, end):
 
   if arr == []:
-    return []
+    return -1
 
   middle = int((start + end) / 2)
 
@@ -19,9 +19,9 @@ def binary_search(arr, target, start, end):
   else:
     return "Not found"
 
-# arr = [-9, -8, -6, -4, -3, -2, 0, 1, 2, 3, 5, 7, 8, 9]
-# arr2 = []
-# print(binary_search(arr, 4, 0, len(arr)-1))
+arr = [-9, -8, -6, -4, -3, -2, 0, 1, 2, 3, 5, 7, 8, 9]
+arr2 = []
+print(binary_search(arr2, 3, 0, len(arr)-1))
 
 
 # STRETCH: implement an order-agnostic binary search
@@ -31,5 +31,5 @@ def binary_search(arr, target, start, end):
 # You can implement this function either recursively 
 # or iteratively
 def agnostic_binary_search(arr, target):
-    # Your code here
+    pass
 
