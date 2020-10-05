@@ -24,7 +24,7 @@ target = 40
 result = binary_search(arr, target, 0,len(arr)-1) 
   
 if result != -1: 
-    print("Element is present at index", str(result)) 
+    print('found it', target, "is present at index", str(result)) 
 else: 
     print("Element is not present in array") 
 
