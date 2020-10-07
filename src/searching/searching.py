@@ -10,7 +10,7 @@ def binary_search(arr, target, start, end):
         elif arr[midpoint] < target: 
             # then run through again
             return binary_search(arr, target, midpoint+1, end)
-        # if the midpoint value is mire than the target
+        # if the midpoint value is more than the target
         else:
             # then run through again
             return binary_search(arr, target, start, midpoint-1)
