@@ -11,8 +11,8 @@ def merge(arrA, arrB):
             result.append(arrB[right_index])
             right_index += 1
 
-    result += arrA[left_index:]
-    result += arrB[right_index:]
+    result.extend(arrA[left_index:])
+    result.extend(arrB[right_index:])
     return result
 
 # TO-DO: implement the Merge Sort function below recursively

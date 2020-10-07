@@ -1,32 +1,11 @@
 # TO-DO: Implement a recursive implementation of binary search
 
-
-# def binary_search(arr, target, start, end):
-#     if len(arr) == 0:
-#         return - 1
-
-#     middle = (start + end) // 2
-
-#     if target == arr[middle]:
-#         return middle
-
-#     if target < arr[middle]:
-
-#         return binary_search(arr, target, start, middle -1)
-#     else:
-#         return binary_search(arr, target, middle + 1, end)
-
-    
-
-#     return binary_search(arr, target, start, end)
-
-
 def binary_search(arr, target, start, end):
     if len(arr) == 0:
         return -1
 
-    if end >= start:
-        mid = (end + start) // 2
+    if start <= end:
+        mid = (start + end) // 2
 
         if arr[mid] == target:
             return mid
