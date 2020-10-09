@@ -81,4 +81,6 @@ def merge_sort_in_place(arr, l, r):
     pass
 
 
-print(merge_sort([55,33,22,43,11]))
+if __name__ == "__main__":
+
+    print(merge_sort([55,33,22,43,11]))
